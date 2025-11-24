@@ -1,0 +1,39 @@
+from Minifrwk import *
+from Minifrwk.src.minifrwk import *
+# from Minifrwk.src.minifrwk import cargar_numeric_ops, cargar_text_ops
+
+def main():
+
+    # Cargar operaciones numéricas y de texto
+    numeric_ops = cargar_numeric_ops()
+    text_ops = cargar_text_ops()
+    print("Plugins numéricos cargados:", list(numeric_ops.keys()))
+    print("Plugins de texto cargados:", list(text_ops.keys()))
+
+    # Ejemplo de uso de operaciones numéricas
+    numeros = [4, 5]
+    if "numeric_plugin" in numeric_ops:
+        potencia = numeric_ops["numeric_plugin"].run(numeros)
+        print("Potencia:",numeros, potencia)
+
+    if "potencia" in numeric_ops:
+        potencia = numeric_ops["potencia"].run(numeros)
+        print("Potencia2:",numeros, potencia)
+
+    if "numeric_ops" in numeric_ops:
+        suma_total = numeric_ops["numeric_ops"].run(numeros)
+        print("Suma total:", suma_total)
+
+    # Ejemplo de uso de operaciones de texto
+    textos = ["hola", "mundo", "python"]
+    if "text_plugin" in text_ops:
+        resultados_invertidos = [text_ops["text_plugin"].run(t) for t in textos]
+        print("Textos invertidos:", resultados_invertidos)
+
+    if "text_ops" in text_ops:
+        textos_mayusculas = text_ops["text_ops"].run(textos)
+        print("Textos en mayúsculas:", textos_mayusculas)
+
+
+if __name__ == "__main__":
+    main()

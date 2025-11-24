@@ -1,0 +1,14 @@
+[project]
+name = "MiniFrwk"
+version = "0.1.0"
+description = "Mini Framework extensible"
+authors = [{ name="Guillermo", email="guillermobaez@gmail.com" }]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.entry-points."minifrwk.numeric_ops"]
+suma = "minifrwk.numeric_ops:Sumatoria"
+
+[project.entry-points."minifrwk.text_ops"]
+algoritmo_a = "minifrwk.text_ops:Text_ops"
