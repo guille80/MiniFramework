@@ -1,0 +1,15 @@
+seed: 42
+rounds: 3
+round_name: "3"
+clients: 
+ total: 5
+ per_round: 2
+ epochs: 1
+ batch_size: 16
+ lr: 0.001
+algorithm: 
+ id: mean_dummy
+ params: {}
+logging: 
+ level: INFO
+ output_dir: runs/demo
