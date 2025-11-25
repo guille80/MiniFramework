@@ -1,5 +1,7 @@
 from Minifrwk import *
 from Minifrwk.src.minifrwk import *
+import minifrwk
+# from Minifrwk.src.minifrwk import MiniFrwk # no funciona
 # from Minifrwk.src.minifrwk import cargar_numeric_ops, cargar_text_ops
 
 def main():
@@ -34,6 +36,7 @@ def main():
         textos_mayusculas = text_ops["algoritmo_a"].run(textos)
         print("Textos en mayúsculas:", textos_mayusculas)
 
+    print("Ejecución completada. versión de Minifrwk:", minifrwk.__version__)
 
 if __name__ == "__main__":
     main()
