@@ -36,6 +36,9 @@ def main():
         textos_mayusculas = text_ops["algoritmo_a"].run(textos)
         print("Textos en mayúsculas:", textos_mayusculas)
 
+    read_data = minifrwk.read_data_table()
+    print("Datos leídos desde el archivo:", read_data)
+
     print("Ejecución completada. versión de Minifrwk:", minifrwk.__version__)
 
 if __name__ == "__main__":
