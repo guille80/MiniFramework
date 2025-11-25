@@ -2,10 +2,11 @@ from .numeric_ops.resta import resta
 from .numeric_ops.suma import suma, Sumatoria
 from .data_reader import read_data_table
 from .core import cargar_numeric_ops, cargar_text_ops
+from .config_loader.loader import load_config_yaml
 
 
 __all__ = ["cargar_numeric_ops", "cargar_text_ops", 'suma', 'resta', 'Sumatoria',
-           "read_data_table"]
+           "read_data_table", "load_config_yaml"]
 
 from importlib.metadata import version, PackageNotFoundError
 try:

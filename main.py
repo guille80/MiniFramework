@@ -6,6 +6,9 @@ import minifrwk
 
 def main():
 
+    # Inicializar el framework
+    minifrwk.load_config_yaml()
+
     # Cargar operaciones numéricas y de texto
     numeric_ops = cargar_numeric_ops()
     text_ops = cargar_text_ops()
