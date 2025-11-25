@@ -1,0 +1,84 @@
+# Compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Extensiones C
+*.so
+
+# Distribución y empaquetado
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs e instaladores
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Reportes de test / cobertura
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Entornos virtuales
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+env/
+eco_env/
+
+# Configuración del IDE/Editor
+.idea/
+.vscode/
+*.swp
+*~
+
+# Proyectos Rope/VIM
+.ropeproject/
+
+# Archivos generados por Sphinx
+docs/_build/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Django
+*.log
+
+# Archivos de traducción
+*.mo
+*.pot
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+.docker/

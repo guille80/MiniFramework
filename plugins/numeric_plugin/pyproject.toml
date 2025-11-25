@@ -1,0 +1,8 @@
+[project]
+name = "potencia"
+version = "0.1.0"
+dependencies = ["MiniFrwk"]
+authors = [{ name="Guillermo", email="guillermobaez@gmail.com" }]
+
+[project.entry-points."minifrwk.numeric_ops"]
+potencia = "numeric_plugin.core:Potencia"

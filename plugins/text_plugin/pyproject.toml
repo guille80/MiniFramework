@@ -1,0 +1,8 @@
+[project]
+name = "text-plugin"
+version = "0.1.0"
+dependencies = ["MiniFrwk"]
+authors = [{ name="Guillermo", email="guillermobaez@gmail.com" }]
+
+[project.entry-points."minifrwk.text_ops"]
+text_plugin = "text_plugin.reverse:Reverser"
