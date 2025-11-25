@@ -20,8 +20,8 @@ def main():
         potencia = numeric_ops["potencia"].run(numeros)
         print("Potencia2:",numeros, potencia)
 
-    if "numeric_ops" in numeric_ops:
-        suma_total = numeric_ops["numeric_ops"].run(numeros)
+    if "suma" in numeric_ops:
+        suma_total = numeric_ops["suma"].run(numeros)
         print("Suma total:", suma_total)
 
     # Ejemplo de uso de operaciones de texto
@@ -30,8 +30,8 @@ def main():
         resultados_invertidos = [text_ops["text_plugin"].run(t) for t in textos]
         print("Textos invertidos:", resultados_invertidos)
 
-    if "text_ops" in text_ops:
-        textos_mayusculas = text_ops["text_ops"].run(textos)
+    if "algoritmo_a" in text_ops:
+        textos_mayusculas = text_ops["algoritmo_a"].run(textos)
         print("Textos en mayúsculas:", textos_mayusculas)
 
 
