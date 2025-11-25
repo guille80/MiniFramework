@@ -6,6 +6,7 @@ authors = [{ name="Guillermo Báez", email="guillermobaez@gmail.com" }]
 requires-python = ">=3.8"
 dependencies = [
     "pyyaml>=6.0",
+    "typer>=0.20.0",
 ]
 
 readme = "README.md"
@@ -35,3 +36,6 @@ dev = [
 "pytest",
 "flake8"
 ]
+
+[project.scripts]
+mini = "minifrwk.cli:app"
