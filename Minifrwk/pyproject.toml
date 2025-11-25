@@ -9,6 +9,7 @@ where = ["src"]
 
 [project.entry-points."minifrwk.numeric_ops"]
 suma = "minifrwk.numeric_ops:Sumatoria"
+reductor = "minifrwk.numeric_ops:Reductor"
 
 [project.entry-points."minifrwk.text_ops"]
 algoritmo_a = "minifrwk.text_ops:Text_ops"

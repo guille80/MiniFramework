@@ -1,8 +1,29 @@
 from Minifrwk import *
 from Minifrwk.src.minifrwk import *
 import minifrwk
-# from Minifrwk.src.minifrwk import MiniFrwk # no funciona
 # from Minifrwk.src.minifrwk import cargar_numeric_ops, cargar_text_ops
+
+from importlib.metadata import entry_points
+
+def load(name):
+    ep = next(e for e in entry_points(group="minifrwk.numeric_ops") if e.name == name)
+    mod, obj = ep.value.split(":")
+    return getattr(__import__(mod, fromlist=[obj]), obj)
+
+# def test_entry_points():
+    # numeric_ops = cargar_numeric_ops()
+    # text_ops = cargar_text_ops()
+
+    # assert "numeric_plugin" in numeric_ops, "Falta el plugin numérico 'numeric_plugin'"
+    # assert "text_plugin" in text_ops, "Falta el plugin de texto 'text_plugin'"
+
+    # numeros = [2, 3]
+    # potencia = numeric_ops["numeric_plugin"].run(numeros)
+    # assert potencia == 8, f"Resultado incorrecto para potencia: esperado 8, obtenido {potencia}"
+
+    # textos = ["abc", "def"]
+    # resultados_invertidos = [text_ops["text_plugin"].run(t) for t in textos]
+    # assert resultados_invertidos == ["cba", "fed"], f"Resultado incorrecto para textos invertidos: esperado ['cba', 'fed'], obtenido {resultados_invertidos}"
 
 def main():
 
@@ -26,6 +47,10 @@ def main():
         suma_total = numeric_ops["suma"].run(numeros)
         print("Suma total:", suma_total)
 
+    if "reductor" in numeric_ops:
+        red_total = numeric_ops["reductor"].run(numeros)
+        print("Reducción total:", red_total)
+
     # Ejemplo de uso de operaciones de texto
     textos = ["hola", "mundo", "python"]
     if "text_plugin" in text_ops:
@@ -36,8 +61,10 @@ def main():
         textos_mayusculas = text_ops["algoritmo_a"].run(textos)
         print("Textos en mayúsculas:", textos_mayusculas)
 
-    read_data = minifrwk.read_data_table()
-    print("Datos leídos desde el archivo:", read_data)
+    # read_data = minifrwk.read_data_table()
+    # print("Datos leídos desde el archivo:", read_data)
+    data = [2, 3]
+    load("reductor").run(data)
 
     print("Ejecución completada. versión de Minifrwk:", minifrwk.__version__)
 

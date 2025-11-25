@@ -1,10 +1,10 @@
-from .numeric_ops.resta import resta
+from .numeric_ops.resta import resta, Reductor
 from .numeric_ops.suma import suma, Sumatoria
 from .data_reader import read_data_table
 from .core import cargar_numeric_ops, cargar_text_ops
 
 
-__all__ = ["cargar_numeric_ops", "cargar_text_ops", 'suma', 'resta', 'Sumatoria',
+__all__ = ["cargar_numeric_ops", "cargar_text_ops", 'suma', 'resta', 'Sumatoria', 'Reductor',
            "read_data_table"]
 
 from importlib.metadata import version, PackageNotFoundError
