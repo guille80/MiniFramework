@@ -2,7 +2,20 @@
 name = "MiniFrwk"
 version = "0.1.0"
 description = "Mini Framework extensible"
-authors = [{ name="Guillermo", email="guillermobaez@gmail.com" }]
+authors = [{ name="Guillermo Báez", email="guillermobaez@gmail.com" }]
+requires-python = ">=3.8"
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["framework", "extensible", "python"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -12,3 +25,7 @@ suma = "minifrwk.numeric_ops:Sumatoria"
 
 [project.entry-points."minifrwk.text_ops"]
 algoritmo_a = "minifrwk.text_ops:Text_ops"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
