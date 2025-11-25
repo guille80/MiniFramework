@@ -1,8 +1,17 @@
 [project]
 name = "potencia"
 version = "0.1.0"
+description = "Paquete con funciones matemáticas"
+authors = [{ name="Guillermo Báez", email="guillermobaez@gmail.com" }]
+requires-python = ">=3.8"
 dependencies = ["MiniFrwk"]
-authors = [{ name="Guillermo", email="guillermobaez@gmail.com" }]
+
+keywords = ["MiniFrwk", "Potencia", "python"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 
 [project.entry-points."minifrwk.numeric_ops"]
 potencia = "numeric_plugin.core:Potencia"
