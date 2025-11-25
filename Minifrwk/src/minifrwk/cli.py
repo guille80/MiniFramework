@@ -21,6 +21,17 @@ def suma(sumatoria: str = typer.Option(..., "--sumatoria", help="Ruta al archivo
         total = sum(numeros)
         typer.echo(f"La suma de los números es: {total}")
 
+@app.command()
+def suma2(config: str = typer.Option(..., "--config", help="Ruta al archivo de configuración YAML")):
+    """Suma dos números contenidos en la lista "numeros" en el archivo de configuración ."""
+    with open(config, 'r') as f:
+        cfg = yaml.safe_load(f)
+        typer.echo(cfg)
+        numeros = cfg["numeros"]
+        typer.echo(f"Números a sumar: {numeros}")
+        total = sum(numeros)
+        typer.echo(f"La suma de los números es: {total}")
+
 
 
 if __name__ == "__main__":
