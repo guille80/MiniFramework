@@ -50,6 +50,19 @@ def listar_entry_points():
     return numeric_ops, text_ops
 
 def listar_entry_points_by_group(group_name):
-    eps = importlib.metadata.entry_points(group=group_name)
+    python_version = get_python_version()
+    if python_version.startswith("3.8") or python_version.startswith("3.9"):
+        eps = importlib.metadata.entry_points().get(group_name, [])
+    else:
+        eps = importlib.metadata.entry_points(group=group_name)
     for entry_point in eps:
         print(f"Entry Point: {entry_point.name}, Module: {entry_point.module}, Object: {entry_point.value}") 
+
+import sys
+
+def get_python_version() -> str:
+    """
+    Devuelve la versión de Python en formato 'mayor.menor.micro'.
+    """
+    version_info = sys.version_info
+    return f"{version_info.major}.{version_info.minor}.{version_info.micro}"
