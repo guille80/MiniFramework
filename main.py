@@ -45,6 +45,30 @@ def main():
     listar_entry_points_by_group("minifrwk.numeric_ops")
     listar_entry_points_by_group("minifrwk.text_ops") 
 
+    try:
+        # Cargar y usar un plugin específico mediante load_plugin (usando instanciación directa)
+        # reductor_plugin = load_plugin("reductor")
+        
+        # o usando factory_plugin (usando patrón fábrica)
+        reductor_class = factory_plugin("reductora")
+        reductor_plugin = reductor_class([1000])  # Inicializa con un total de 1000
+
+        resultado_reductor = reductor_plugin.run([10, 20, 30, 40])
+        print("Resultado del reductor:", resultado_reductor)
+    except ValueError as e:
+        print(e)
+
+    # carga directa del plugin sin usar entry points
+    try:
+        # o usando factory_plugin (usando patrón fábrica)
+        reductor2 = factory_plugin("minifrwk.numeric_ops.resta:Reductor")
+        reductor_plugin2 = reductor2([1000])  # Inicializa con un total de 1000
+
+        resultado_reductor2 = reductor_plugin2.run([10, 20, 30, 40])
+        print("Resultado del reductor:", resultado_reductor2)
+    except ValueError as e:
+        print(e)
+
     print("Ejecución completada. versión de Minifrwk:", minifrwk.__version__)
 
 if __name__ == "__main__":
