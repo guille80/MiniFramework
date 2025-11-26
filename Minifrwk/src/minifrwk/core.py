@@ -109,3 +109,24 @@ def factory_plugin(plugin_id: str):
         return getattr(mod, class_name)
 
     raise ValueError(f"Plugin con ID '{plugin_id}' no encontrado.")
+
+# Fábrica para cargar algoritmos por su ID.
+def load_algorithm(algorithm: str):
+    """
+    Fábrica para cargar algoritmos por su ID.
+    """
+    eps = get_entry_points_by_group("minifrwk.algorithms")
+    # Buscar el entry point por nombre
+    for entry_point in eps:
+        if entry_point.name == algorithm:
+            # Importar y devolver la clase usando la ruta registrada
+            module, class_name = entry_point.value.split(":")
+            mod = importlib.import_module(module)
+            return getattr(mod, class_name)
+    # Si no se encuentra en los entry points, intentar cargar directamente
+    if ":" in algorithm:
+        module, class_name = algorithm.split(":")
+        mod = importlib.import_module(module)
+        return getattr(mod, class_name)
+
+    raise ValueError(f"Plugin con ID '{algorithm}' no encontrado.")

@@ -1,5 +1,6 @@
 import typer
 import yaml
+from .orchestrator import run as orchestrator_run
 
 app = typer.Typer()
 
@@ -9,6 +10,7 @@ def run(config: str = typer.Option(..., "--config", help="Ruta al archivo de con
     with open(config, 'r') as f:
         cfg = yaml.safe_load(f)
         typer.echo(cfg)
+        orchestrator_run(cfg)
 
 @app.command()
 def suma(sumatoria: str = typer.Option(..., "--sumatoria", help="Ruta al archivo de configuración YAML")):

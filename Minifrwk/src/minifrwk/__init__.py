@@ -1,12 +1,12 @@
 from .numeric_ops.resta import resta
 from .numeric_ops.suma import suma, Sumatoria
 from .data_reader import read_data_table
-from .core import cargar_numeric_ops, cargar_text_ops, listar_entry_points_by_group, load_plugin, factory_plugin
+from .core import cargar_numeric_ops, cargar_text_ops, listar_entry_points_by_group, load_plugin, factory_plugin, load_algorithm
 from .config_loader.loader import load_config_yaml
 
 
 __all__ = ["cargar_numeric_ops", "cargar_text_ops", 'suma', 'resta', 'Sumatoria',
-           "read_data_table", "load_config_yaml", 'listar_entry_points_by_group', 'load_plugin', 'factory_plugin']
+           "read_data_table", "load_config_yaml", 'listar_entry_points_by_group', 'load_plugin', 'factory_plugin', 'load_algorithm']
 
 from importlib.metadata import version, PackageNotFoundError
 try:
