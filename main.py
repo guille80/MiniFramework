@@ -42,6 +42,9 @@ def main():
     read_data = minifrwk.read_data_table()
     print("Datos leídos desde el archivo:", read_data)
 
+    listar_entry_points_by_group("minifrwk.numeric_ops")
+    listar_entry_points_by_group("minifrwk.text_ops") 
+
     print("Ejecución completada. versión de Minifrwk:", minifrwk.__version__)
 
 if __name__ == "__main__":

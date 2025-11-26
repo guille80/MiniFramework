@@ -34,3 +34,22 @@ def cargar_text_ops():
     #     ops["text_ops"] = Text_ops()
 
     return ops
+
+def listar_entry_points():
+    numeric_ops = []
+    text_ops = []
+
+    eps = importlib.metadata.entry_points()
+
+    for entry_point in eps.select(group="minifrwk.numeric_ops"):
+        numeric_ops.append(entry_point.name)
+
+    for entry_point in eps.select(group="minifrwk.text_ops"):
+        text_ops.append(entry_point.name)
+
+    return numeric_ops, text_ops
+
+def listar_entry_points_by_group(group_name):
+    eps = importlib.metadata.entry_points(group=group_name)
+    for entry_point in eps:
+        print(f"Entry Point: {entry_point.name}, Module: {entry_point.module}, Object: {entry_point.value}") 
