@@ -10,7 +10,8 @@ def run(config: str = typer.Option(..., "--config", help="Ruta al archivo de con
     with open(config, 'r') as f:
         cfg = yaml.safe_load(f)
         typer.echo(cfg)
-        orchestrator_run(cfg)
+        history = orchestrator_run(cfg)
+        typer.echo(f"Historial de estados: {history}")
 
 @app.command()
 def suma(sumatoria: str = typer.Option(..., "--sumatoria", help="Ruta al archivo de configuración YAML")):

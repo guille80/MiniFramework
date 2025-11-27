@@ -14,7 +14,8 @@ def run(cfg):
 
     # 3. Inicializar estado global
     w_t = 0  # O adaptar según necesidad
-    history = [w_t]
+    # history = [w_t]
+    history = [{"round": -1, "state": w_t, "clients": []}]  # Estado inicial
 
     total = cfg["clients"]["total"]
     per_round = cfg["clients"]["per_round"]
@@ -30,7 +31,8 @@ def run(cfg):
 
         # 4c. Agregación
         w_t = alg.aggregate(w_t, updates)
-        history.append(w_t)
+        history.append({"round": t, "state": w_t, "clients": client_ids})
+        # history.append(w_t)
         print(f"Ronda {t}: estado = {w_t}")
     return history
 
