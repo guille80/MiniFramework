@@ -28,6 +28,9 @@ reductor = "minifrwk.numeric_ops:Reductor"
 [project.entry-points."minifrwk.text_ops"]
 algoritmo_a = "minifrwk.text_ops:Text_ops"
 
+[project.entry-points."minifrwk.algorithms"]
+mean_dummy = "minifrwk.algorithms:MeanDummy"
+
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
